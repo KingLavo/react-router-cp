@@ -1,13 +1,136 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.addMov_container{ 
+   width: 40%;
+   margin: 8rem auto;
+ }
+ /* .add_movie, span{
+   border: none;
+   outline: none;
+   margin: 0 auto;
+   width: ;
+   padding: .5rem;
+   border-radius: 6px;
+   color: #252525;
+   font-weight: bold;
+   cursor: pointer;
+ } */
+
+.addMov_container .form_control input{
+   display: block;
+   width: 95%;
+   border: none;
+   outline: none;
+   border-bottom: 1px solid burlywood;
+   padding: 0 0 6px 0;
+   text-transform: capitalize;
+   color: #404040;
+   margin-bottom: 3.3rem;
+}
+.addMov_container .form_control select{
+   padding: 5px;
+   border: none;
+   outline: none ;
+   border-radius: 5px;
+   margin-bottom: 3.3rem;
+   color: #404040;
+   box-shadow: 0px 0px 4px #404040;
+   overflow-y: hidden;
+   scroll-behavior: smooth;
+}
+.addMov_container button, .add_movie, .search{
+   padding: 1rem 2rem;
+   outline: none;
+   border: none;
+   border-radius: 5px;
+   background-color: rgb(207, 15, 15);
+   color: aliceblue;
+   cursor: pointer;
+   font-weight: bold;
+   width: 200px;
+   display: block;
+   margin: 0 auto;
+}
+.search{
+   width: 100px;
+   display: flex;
+   justify-content: flex-end;
+   margin: 0 63%;
+   background-color: #d1d1d1;
+   font-weight: bolder;
+}
+.add_movie{
+   padding: 1rem .5rem;
+   margin: 0 180px;
+   width: 150px;
+   background-color: #d1d1d1;
+   transition: background-color 1s;
+}
+.add_movie span{
+   margin-right: 10px;
+}
+.add_movie:hover{
+   background-color: blueviolet;
+   color: azure;
+}
+.card-container {
+	width: 270px;
+	height: 350px;
+   box-shadow: 0 0px 8px rgba(0, 0, 0, 0.6);
+   overflow: hidden;
+   background-color: #252525;
+   color: aliceblue;
+   border-radius: 5px;
+   cursor: pointer;
+}
+.poster {
+	width: 100%;
+   height: 80%;
+   margin-bottom: 0; 
+} 
+.movie_data h2{
+   margin: 2px;
+   text-align: center;
+   text-transform: capitalize
+}
+.movie_data span{
+   display: block;
+   text-align: center;
+   font-weight: bolder;
+}
+.movieList, .no_movies{
+   width: 85%;
+   display: flex; 
+   align-items: center;
+   margin: 1rem auto;
+   flex-wrap: wrap;
+   gap: 1rem; 
+}
+.no_movies{
+   justify-content: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.no_movies h1{
+   color: #525252;
+   text-transform: capitalize;
+   font-weight: bolder;
+   text-align: center;
 }
+
+ .container .filter{
+    width: 40%;
+    display: flex;
+    padding: .7rem 10px;
+    margin: 1.8rem auto;
+    border-radius: 20px;
+    box-shadow: 4px 3px 4px 3px gainsboro;    
+}
+.container .filter input{
+    width: 85%;
+    padding: 5px 16px;
+    display: block;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: #525252;
+    text-transform: capitalize;
+} 
+ 

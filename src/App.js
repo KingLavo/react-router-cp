@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { useState } from 'react'
+import AddMovie from './components/AddMovie'
+import Filter from './components/Filter'
+import MovieList from './components/MovieList'
+import { FaPlus } from "react-icons/fa"
+  
+ 
 
-function App() {
+
+const App = () => {
+
+  const [movies, setMovies ] = useState([])
+  const [ addMovie, setAddMovie] = useState(false)
+  const [showBtn, setShowBtn ] = useState(true)
+  const [showFilter, setShowFilter ] = useState(true)
+   
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div > 
+      {showFilter && <Filter movies={movies} setMovies={setMovies}/>}
+      { showBtn && <button className='add_movie' onClick={()=> setAddMovie(!addMovie)}> <span>Add Movie</span> <FaPlus/></button> }
+      {   addMovie 
+        ? 
+          <AddMovie 
+            movies={movies} 
+            setMovies={setMovies}
+            setAddMovie={setAddMovie}
+            setShowBtn={setShowBtn} 
+            setShowFilter={setShowFilter}/> 
+        :
+           <MovieList movies={movies}/> }
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
+
+ 
