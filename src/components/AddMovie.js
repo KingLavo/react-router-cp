@@ -1,5 +1,6 @@
 import React, {useState } from 'react'
 import { motion } from 'framer-motion'
+import { useNavigate } from "react-router-dom";
 
 
 const containerVarients={
@@ -15,15 +16,14 @@ const containerVarients={
   }
 
 
-const AddMovie = ({movies, setMovies, setAddMovie, setShowBtn, setShowFilter}) => {
+const AddMovie = ({movies, setMovies}) => {
+
+    const navigate = useNavigate()
     const [title, setTitle ] = useState("") 
     const [description, setDescription ] = useState("")
     const [ posterUrl, setPosterUrl ] = useState("")
     const [ rate, setRate ] = useState("") 
-    setShowBtn(false)
-    setShowFilter(false)
-    
-
+    const [ trailer, setTrailer ] = useState("")
 
     const handleAddMovie = (e)=>{
         
@@ -33,21 +33,21 @@ const AddMovie = ({movies, setMovies, setAddMovie, setShowBtn, setShowFilter}) =
             title,
             description,
             posterUrl,
+            trailer,
             rate
         } 
 
         const newMovie = [...movies, movieData]
-        // movies.push(newMovie)
         setMovies(newMovie)
-       
-                
+        
+        setTrailer("")  
         setTitle("")
         setDescription("")
         setPosterUrl("")
         setRate("")
-        setAddMovie(false)
-        setShowBtn(true)
-        setShowFilter(true)
+
+        navigate('/movie-list')
+        
     }  
 
   return (
@@ -65,6 +65,9 @@ const AddMovie = ({movies, setMovies, setAddMovie, setShowBtn, setShowFilter}) =
             </div>
             <div className="form_control">
                  <input type="text" placeholder='Movie posterURL' value={posterUrl} onChange={(e)=>setPosterUrl(e.target.value)}  />
+            </div>
+            <div className="form_control">
+                 <input type="text" placeholder='Movie Trailer' value={trailer} onChange={(e)=>setTrailer(e.target.value)}  />
             </div>
             <div className="form_control">
                 <select value={rate} onChange={(e)=>setRate(e.target.value)}>

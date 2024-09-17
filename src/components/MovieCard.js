@@ -22,7 +22,6 @@ const containerVarients={
   }
 }
 const MovieCard = ({movie}) => { 
-  console.log(movie.posterUrl)
   return ( 
     <motion.div className="card-container"
       variants={containerVarients}
@@ -32,7 +31,7 @@ const MovieCard = ({movie}) => {
     >
       <img src={`${movie.posterUrl}`} alt="" className="poster" />
       <div className="movie_data">
-        <h2>{movie.title}</h2>
+        <h3>{movie.title}</h3>
         <span>Rate : {movie.rate}</span>
       </div>
     </motion.div>

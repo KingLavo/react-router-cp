@@ -2,7 +2,6 @@ import React, {useState} from 'react'
 
 const Filter = ({movies, setMovies}) => {
   const [filterVal, setFilterVal] = useState("")
-
   const handleSearch = ()=>{  
     const value = movies.filter(item => item.title === filterVal) 
     setMovies(value) 
@@ -17,7 +16,7 @@ const Filter = ({movies, setMovies}) => {
               onChange={(e)=>setFilterVal(e.target.value)}
             />
       </form> 
-      <button className='search' onClick={()=> handleSearch()} >search</button> 
+      <button className='search-btn' onClick={()=> handleSearch()} >search</button> 
     </div> 
   )
 }

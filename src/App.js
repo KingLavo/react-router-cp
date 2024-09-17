@@ -1,39 +1,28 @@
 import React from 'react'
 import { useState } from 'react'
+import { Routes, Route } from "react-router-dom"
 import AddMovie from './components/AddMovie'
-import Filter from './components/Filter'
+import Home from "./components/Home"
 import MovieList from './components/MovieList'
-import { FaPlus } from "react-icons/fa"
-  
+import MovieDes from "./components/MovieDes"
  
-
 
 const App = () => {
 
   const [movies, setMovies ] = useState([])
-  const [ addMovie, setAddMovie] = useState(false)
-  const [showBtn, setShowBtn ] = useState(true)
-  const [showFilter, setShowFilter ] = useState(true)
    
-
   return (
     <div > 
-      {showFilter && <Filter movies={movies} setMovies={setMovies}/>}
-      { showBtn && <button className='add_movie' onClick={()=> setAddMovie(!addMovie)}> <span>Add Movie</span> <FaPlus/></button> }
-      {   addMovie 
-        ? 
-          <AddMovie 
-            movies={movies} 
-            setMovies={setMovies}
-            setAddMovie={setAddMovie}
-            setShowBtn={setShowBtn} 
-            setShowFilter={setShowFilter}/> 
-        :
-           <MovieList movies={movies}/> }
+      <Routes> 
+        <Route path="/" element={<Home/>} /> 
+        <Route path="/movie-list" element={<MovieList movies={movies} setMovies={setMovies}/>}/>
+        <Route path="/add-movie" element={ <AddMovie movies={movies} setMovies={setMovies}/> } />
+        <Route path="/movie/:id" element={<MovieDes movies={movies}/>} />
+      </Routes>      
     </div>
   )
 }
 
-export default App
+export default App 
 
  
